@@ -1,0 +1,59 @@
+/* Product List Container */
+.product-list-container {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+/* Product Title */
+.product-list-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Product Card */
+.product-card {
+    border-radius: 10px !important;
+    transition: transform 0.2s;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-card:hover {
+    transform: scale(1.03);
+}
+
+/* Product Name */
+.product-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1976d2;
+}
+
+/* Product Price */
+.product-price {
+    font-size: 16px;
+    color: #444;
+}
+
+/* Product Stock Status */
+.product-stock {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Out of Stock Text */
+.out-of-stock {
+    color: red !important;
+    font-weight: bold;
+}
+
+/* Add to Cart Button */
+.add-to-cart-button {
+    font-weight: bold;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.add-to-cart-button:hover {
+    background-color: #155fa0 !important;
+}

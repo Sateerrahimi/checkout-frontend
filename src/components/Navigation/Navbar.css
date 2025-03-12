@@ -1,0 +1,30 @@
+/* Navbar container */
+.navbar {
+    background-color: #1976d2 !important;
+    box-shadow: none;
+}
+
+/* Toolbar adjustments */
+.navbar-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Store title */
+.navbar-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Shopping cart icon */
+.cart-icon {
+    color: white !important;
+    transition: transform 0.2s;
+}
+
+.cart-icon:hover {
+    transform: scale(1.1);
+}
