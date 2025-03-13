@@ -1,11 +1,11 @@
 import React from "react";
 import { Button } from "@mui/material";
-import { useNavigate } from "react-router-dom"; // ✅ Import useNavigate
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import "./Checkout.css"; // ✅ Import CSS for button styling
+import "./Checkout.css";
 
 const CheckoutButton = ({ cart }) => {
-    const navigate = useNavigate(); // ✅ React Router navigation
+    const navigate = useNavigate();
 
     const handleCheckout = () => {
         if (cart.length === 0) {
@@ -13,7 +13,6 @@ const CheckoutButton = ({ cart }) => {
             return;
         }
 
-        // ✅ Navigate to /checkout with cart data
         navigate("/checkout", { state: { cart } });
     };
 
@@ -23,8 +22,8 @@ const CheckoutButton = ({ cart }) => {
             color="secondary"
             fullWidth
             sx={{ marginTop: 3 }}
-            className="checkout-button" // ✅ Styled using Checkout.css
-            onClick={handleCheckout} // ✅ Navigate instead of calling API
+            className="checkout-button"
+            onClick={handleCheckout}
         >
             Proceed to Checkout
         </Button>

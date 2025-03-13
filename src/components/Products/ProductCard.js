@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, CardContent, Typography, Select, MenuItem, Button } from "@mui/material";
-import "./Product.css"; // ✅ Import styles
+import "./Product.css";
 
 function ProductCard({ product, selectedQuantity, handleQuantityChange, addToCart }) {
     return (
@@ -40,5 +40,4 @@ function ProductCard({ product, selectedQuantity, handleQuantityChange, addToCar
         </Card>
     );
 }
-
 export default ProductCard;

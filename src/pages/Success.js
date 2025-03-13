@@ -6,15 +6,15 @@ import { CartContext } from "../context/CartContext";
 const Success = () => {
     const navigate = useNavigate();
     const { cart, removeFromCart } = useContext(CartContext);
-    const hasClearedCart = useRef(false); // ✅ Prevent multiple runs
+    const hasClearedCart = useRef(false); // Prevent multiple runs
 
     useEffect(() => {
         if (!hasClearedCart.current && cart.length > 0) {
             cart.forEach((item) => removeFromCart(item.id));
             localStorage.removeItem("cart");
-            hasClearedCart.current = true; // ✅ Mark as completed
+            hasClearedCart.current = true; // Mark as completed
         }
-    }, [cart, removeFromCart]); // ✅ Now includes cart and removeFromCart safely
+    }, [cart, removeFromCart]); // Includes cart and removeFromCart safely
 
 
 

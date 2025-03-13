@@ -4,7 +4,7 @@ import { API_BASE_URL } from "../config";
 const PRODUCT_API_URL = `${API_BASE_URL}/products`;
 
 
-// Fetch all products
+
 export const getProducts = async () => {
     try {
         const response = await axios.get(PRODUCT_API_URL);

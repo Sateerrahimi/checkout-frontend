@@ -1,11 +1,11 @@
 import React from "react";
 import { AppBar, Toolbar, Typography, IconButton, Badge } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import "./Navbar.css"; // ✅ Import CSS for styling
+import "./Navbar.css";
 
 function Navbar({ cartItemCount, toggleCart }) {
     return (
-        <AppBar position="static" className="navbar"> {/* ✅ Apply CSS class */}
+        <AppBar position="static" className="navbar">
             <Toolbar className="navbar-toolbar">
                 <Typography variant="h6" className="navbar-title">
                     Online Store

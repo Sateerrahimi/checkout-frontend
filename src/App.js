@@ -8,15 +8,13 @@ import CheckoutPage from "./pages/CheckoutPage";
 import Success from "./pages/Success";
 import NotFound from "./pages/NotFound";
 import { CartContext } from "./context/CartContext";
-import { Container, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Button } from "@mui/material";
+import { Container} from "@mui/material";
 
 const App = () => {
     const [products, setProducts] = useState([]);
     const [selectedQuantities, setSelectedQuantities] = useState({});
-    const [openDialog, setOpenDialog] = useState(false);
-
     const { cart, addToCart, removeFromCart, clearCart } = useContext(CartContext);
-    const navigate = useNavigate(); // Add this to handle navigation
+    const navigate = useNavigate();
 
     useEffect(() => {
         loadProducts();
@@ -31,14 +29,12 @@ const App = () => {
         setSelectedQuantities((prev) => ({ ...prev, [productId]: quantity }));
     };
 
-    // Function to navigate to the cart page when clicking the cart icon
     const handleToggleCart = () => {
-        navigate("/cart"); // Navigate to /cart instead of toggling visibility
+        navigate("/cart");
     };
 
     return (
         <>
-            {/* Pass handleToggleCart to Navbar */}
             <Navbar cartItemCount={cart.length} toggleCart={handleToggleCart} />
 
             <Container maxWidth="md">
@@ -60,19 +56,6 @@ const App = () => {
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </Container>
-
-            {/* Out of Stock Dialog */}
-            <Dialog open={openDialog} onClose={() => setOpenDialog(false)}>
-                <DialogTitle>Out of Stock</DialogTitle>
-                <DialogContent>
-                    <DialogContentText></DialogContentText>
-                </DialogContent>
-                <DialogActions>
-                    <Button onClick={() => setOpenDialog(false)} color="primary">
-                        OK
-                    </Button>
-                </DialogActions>
-            </Dialog>
         </>
     );
 };

@@ -2,10 +2,10 @@ import React, { useState, useContext } from "react";
 import { TextField, Button, Box } from "@mui/material";
 import { createCheckoutSession } from "../../api/paymentApi";
 import { toast } from "react-toastify";
-import { CartContext } from "../../context/CartContext"; // ✅ Import CartContext
+import { CartContext } from "../../context/CartContext";
 
 const CheckoutForm = () => {
-    const { cart, clearCart } = useContext(CartContext); // ✅ Get `clearCart`
+    const { cart, clearCart } = useContext(CartContext);
 
     const [formData, setFormData] = useState({
         name: "",
@@ -28,9 +28,9 @@ const CheckoutForm = () => {
         try {
             const data = await createCheckoutSession(cart);
             if (data.url) {
-                clearCart(); // ✅ Clears cart after successful payment
-                localStorage.removeItem("cart"); // ✅ Clear stored cart data
-                window.location.href = data.url; // ✅ Redirects to Stripe payment
+                clearCart(); // Clears cart after successful payment
+                localStorage.removeItem("cart"); // Clear stored cart data
+                window.location.href = data.url; // Redirects to Stripe payment
             } else {
                 toast.error("Error during checkout. Please try again.");
             }
@@ -52,5 +52,4 @@ const CheckoutForm = () => {
         </Box>
     );
 };
-
 export default CheckoutForm;
