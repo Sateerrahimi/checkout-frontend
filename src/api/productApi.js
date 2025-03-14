@@ -3,8 +3,6 @@ import { API_BASE_URL } from "../config";
 
 const PRODUCT_API_URL = `${API_BASE_URL}/products`;
 
-
-
 export const getProducts = async () => {
     try {
         const response = await axios.get(PRODUCT_API_URL);
@@ -14,7 +12,6 @@ export const getProducts = async () => {
         return [];
     }
 };
-
 
 // Decrease stock when a product is added to the cart
 export const decreaseProductStock = async (productId, quantity) => {

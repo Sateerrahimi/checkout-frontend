@@ -11,8 +11,8 @@ import "react-toastify/dist/ReactToastify.css";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <React.StrictMode>
-            <ProductProvider> {/* ✅ Provides product data */}
-                <CartProvider> {/* ✅ Provides cart functionality */}
+            <ProductProvider> {/* Provides product data */}
+                <CartProvider> {/* Provides cart functionality */}
                     <App />
                     <ToastContainer position="top-center" autoClose={1000} />
                 </CartProvider>
